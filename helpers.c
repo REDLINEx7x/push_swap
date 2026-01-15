@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-char	*ft_subs(const char *s, unsigned int start, size_t len)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
 	size_t			i;
 	char			*sub_s;
@@ -9,9 +9,9 @@ char	*ft_subs(const char *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	s_len = ft_slen(s);
+	s_len = ft_strlen(s);
 	if (s_len <= start)
-		return (ft_sdup(""));
+		return (ft_strdup(""));
 	if (len > s_len - start)
 		len = s_len - start;
 	sub_s = (char *)malloc(len + 1);
@@ -26,7 +26,7 @@ char	*ft_subs(const char *s, unsigned int start, size_t len)
 	sub_s[i] = '\0';
 	return (sub_s);
 }
-size_t	ft_slen(const char *s)
+size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
@@ -43,7 +43,7 @@ char	*ft_strdup(const char *s1)
 	size_t	s1_len;
 
 	i = 0;
-	s1_len = ft_slen(s1);
+	s1_len = ft_strlen(s1);
 	s2 = malloc(sizeof(char) * (s1_len + 1));
 	if (!s2)
 		return (NULL);
@@ -55,7 +55,7 @@ char	*ft_strdup(const char *s1)
 	s2[i] = '\0';
 	return (s2);
 }
-int atol(char *s)
+int ft_atoi(char *s)
 {
 	long int i;
 	long sign;
@@ -64,8 +64,6 @@ int atol(char *s)
 	i = 0;
 	res = 0;
 	sign = 1;
-	while (s[i] >= 9 && s[i] <= 13 || s[i] == 32)
-		i++;
 	if (s[i] == '-' || s[i] == '+')
 	{
 		if (s[i] == '-')
@@ -75,7 +73,23 @@ int atol(char *s)
 	while (s[i] >= 48 && s[i] <= 57)
 	{
 		res = res * 10 + (s[i] - 48);
+		if ((res * sign) > INT_MAX || (res * sign) < INT_MIN)
+			errors();
 		i++;
 	}
 	return (res * sign);
+}
+
+char *ft_addspace(char *s1, char *s2)
+{
+	int i;
+	char *tmp;
+	char *result;
+	if(!s1)
+		return(ft_strdup(s2));
+
+	tmp = ft_strjoin(s1, " ");
+	result = ft_strjoin(tmp, s2);
+	free(tmp);
+	return(result);
 }

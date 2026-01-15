@@ -1,5 +1,30 @@
 #include "push_swap.h"
 
+char	*ft_strjoin(char *s1, char *s2)
+{
+	char	*final_str;
+	int		i;
+	int		j;
+	size_t	strs_len;
+
+	i = 0;
+	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	strs_len = ft_strlen(s1) + ft_strlen(s2);
+	final_str = (char *)malloc(strs_len + 1);
+	if (!final_str)
+		return (NULL);
+	while (s1[i])
+		final_str[j++] = s1[i++];
+	i = 0;
+	while (s2[i])
+		final_str[j++] = s2[i++];
+	final_str[j] = '\0';
+	return (final_str);
+}
+
+
 static int	count_words(const char *s, char c)
 {
 	int	i;
@@ -56,7 +81,7 @@ static char	**catch_word(const char *s, char **splits, char c)
 	return (splits);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_split(char *s, char c)
 {
 	int		arr_len;
 	char	**splits;
