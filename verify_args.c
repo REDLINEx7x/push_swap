@@ -20,16 +20,22 @@ char **verify_args(int ac, char *av[])
     free(s);
     return (args);
 }
-int *convert_to_int(char **args)
+int count_size(char **args)
+{
+    int size;
+    size = 0;
+    while(args[size] != NULL)
+        size++;
+    return(size);
+}
+int *convert_to_int(char **args, int count)
 {
     int i;
     int j;
     int *numbers;
 
     i = 0;
-    while(args[i] != NULL)
-        i++;
-    numbers = malloc(i * sizeof(int));
+    numbers = malloc(count * sizeof(int));
     if(!numbers)
         return (NULL);
     while(args[i] != NULL)
@@ -40,22 +46,41 @@ int *convert_to_int(char **args)
             errors();
         i++;
     }
-    j = 0;
-    while(j > (i - 1))
-    {
-        if(numbers[j] == numbers[j + 1])
-    }
+	if(ft_duplicated(numbers, count))
+        free_all(numbers);
+        errors();
     return(numbers);
 }
+static void	free_arr(char **arr)
+{
+	int	i;
 
-int duplicated(int numbers)
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	free(arr);
+}
+
+int ft_duplicated(int *numbers, int count)
 {
     int j;
-    
+    int i;
+
     j = 0;
-    while(j > (i - 1))
+    i = 0;
+    while(i < count - 1)
     {
-        if(numbers[j] == numbers[j + 1])
+        j = i + 1;
+        while(j < count)
+        {
+            if(numbers[i] == numbers[j])
+                return (1);
+            j++;
+        }
+        i++;
     }
-    return(numbers);
+    return(0);
 }

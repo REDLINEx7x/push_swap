@@ -23,5 +23,6 @@ int ft_atoi(char *s);
 char *ft_addspace(char *s1, char *s2);
 char **verify_args(int ac, char *av[]);
 int str_checker(char *arg);
+int ft_duplicated(int *numbers, int size);
 
 #endif
