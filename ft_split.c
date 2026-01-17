@@ -25,7 +25,7 @@ char	*ft_strjoin(char *s1, char *s2)
 }
 
 
-static int	count_words(const char *s, char c)
+static int	count_words(char *s, char c)
 {
 	int	i;
 	int	word;
@@ -54,7 +54,7 @@ static void	free_arr(char **arr)
 	free(arr);
 }
 
-static char	**catch_word(const char *s, char **splits, char c)
+static char	**catch_word(char *s, char **splits, char c)
 {
 	int	i;
 	int	tmp;

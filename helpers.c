@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+char	*ft_substr(char *s, unsigned int start, size_t len)
 {
 	size_t			i;
 	char			*sub_s;
@@ -26,7 +26,7 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	sub_s[i] = '\0';
 	return (sub_s);
 }
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(char *s)
 {
 	size_t	i;
 
@@ -36,7 +36,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-char	*ft_strdup(const char *s1)
+char	*ft_strdup(char *s1)
 {
 	char	*s2;
 	size_t	i;
@@ -74,7 +74,7 @@ int ft_atoi(char *s)
 	{
 		res = res * 10 + (s[i] - 48);
 		if ((res * sign) > INT_MAX || (res * sign) < INT_MIN)
-			errors();
+			ft_errors();
 		i++;
 	}
 	return (res * sign);

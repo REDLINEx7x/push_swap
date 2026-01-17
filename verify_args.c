@@ -11,7 +11,7 @@ char **verify_args(int ac, char *av[])
     while(i < ac)
     {
         if(av[i][0] == '\0')
-            errors();
+            ft_errors();
         s = ft_addspace(s, av[i]);
 
         i++;
@@ -43,25 +43,36 @@ int *convert_to_int(char **args, int count)
         if (str_checker(args[i]))
             numbers[i] = ft_atoi(args[i]);
         else
-            errors();
+        {
+            free(numbers);
+            ft_errors();
+        }
         i++;
     }
 	if(ft_duplicated(numbers, count))
-        free_all(numbers);
-        errors();
+    {
+        free(numbers);
+        ft_errors();
+    }
     return(numbers);
 }
-static void	free_arr(char **arr)
-{
-	int	i;
 
-	i = 0;
-	while (arr[i])
-	{
-		free(arr[i]);
-		i++;
-	}
-	free(arr);
+int str_checker(char *arg)
+{
+    int i;
+
+    i = 0;
+    if((arg[0] == '-' || arg[0] == '+'))
+        i++;
+    if(arg[i] == '\0')
+        return 0;
+    while(arg[i] != '\0')
+    {
+        if(!(arg[i] >= '0' && arg[i] <= '9'))
+            return (0);
+        i++;
+    }
+    return (1);
 }
 
 int ft_duplicated(int *numbers, int count)
