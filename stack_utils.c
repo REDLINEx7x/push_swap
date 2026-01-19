@@ -9,7 +9,7 @@ t_stack	*ft_new_node(int value)
 		return (NULL);
 	new->next = NULL;
 	new->value = value;
-	new->index = -1;
+	//new->index = -1;
 	return (new);
 }
 
