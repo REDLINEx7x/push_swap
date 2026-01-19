@@ -22,3 +22,23 @@ t_stack *transfer_to_stack(int *numbers, int size)
 	return (stack_a);
 }
 
+//void	sort(t_stack **stack_a)
+//{
+//	int size;
+
+//	size = ft_list_size(*stack_a);
+
+//	if(size == 2)
+
+//	if(size == 3)
+
+//	if(size == 5);
+
+//}
+
+//void two_sort(t_stack **stack)
+//{
+
+//}
+
+
