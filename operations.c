@@ -10,10 +10,6 @@ void swap(t_stack **stack)
     tmp = (*stack)->value;
     (*stack)->value = (*stack)->next->value;
     (*stack)->next->value = tmp;
-
-    //tmp = (*stack)->index;
-    //(*stack)->index = (*stack)->next->index;
-    //(*stack)->next->index = tmp;
 }
 
 void    sa(t_stack **stack_a)
@@ -25,13 +21,13 @@ void    sa(t_stack **stack_a)
 void sb(t_stack **stack_b)
 {
     swap(stack_b);
-    wriet(1, "sb\n", 3);
+    write(1, "sb\n", 3);
 }
 void ss(t_stack **stack_a, t_stack **stack_b)
 {
     swap(stack_a);
     swap(stack_b);
-    wriet(1, "ss\n", 3);
+    write(1, "ss\n", 3);
 }
 
 void rotate(t_stack **stack)
@@ -116,12 +112,12 @@ void    push(t_stack **stack1, t_stack **stack2)
 
 void pa(t_stack **stack_a, t_stack **stack_b)
 {
-    pa(stack_a, stack_b);
+    push(stack_a, stack_b);
     write(1, "pa\n", 3);
 }
 void pb(t_stack **stack_b, t_stack **stack_a)
 {
-    pb(stack_b, stack_a);
+    push(stack_b, stack_a);
     write(1, "pb\n", 3);
 }
 

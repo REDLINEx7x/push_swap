@@ -32,7 +32,26 @@ void       ft_add_back(t_stack **head, t_stack *new_node);
 int        ft_list_size(t_stack *head);
 t_stack    *ft_last_node(t_stack *head);
 void    ft_clear_list(t_stack **head);
-
 t_stack *transfer_to_stack(int *numbers, int size);
+
+// Swap
+void    swap(t_stack **stack);
+void    sa(t_stack **stack_a);
+void    sb(t_stack **stack_b);
+void    ss(t_stack **stack_a, t_stack **stack_b);
+// Rotate
+void    rotate(t_stack **stack);
+void    ra(t_stack **stack_a);
+void    rb(t_stack **stack_b);
+void    rr(t_stack **stack_a, t_stack **stack_b);
+// Reverse Rotate
+void    reverse_rotate(t_stack **stack);
+void    rra(t_stack **stack_a);
+void    rrb(t_stack **stack_b);
+void    rrr(t_stack **stack_a, t_stack **stack_b);
+// Push
+void    push(t_stack **stack1, t_stack **stack2);
+void    pa(t_stack **stack_a, t_stack **stack_b);
+void    pb(t_stack **stack_b, t_stack **stack_a);
 
 #endif

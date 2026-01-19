@@ -45,7 +45,7 @@ int *convert_to_int(char **args, int count)
         else
         {
             free(numbers);
-            ft_errors();
+            return(ft_errors());
         }
         i++;
     }
