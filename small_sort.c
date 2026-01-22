@@ -1,42 +1,5 @@
 #include "push_swap.h"
 
-t_stack *transfer_to_stack(int *numbers, int size)
-{
-    t_stack *stack_a;
-	t_stack *node;
-    int i;
-
-    i = 0;
-    stack_a = NULL;
-    while(i < size)
-    {
-    	node =  ft_new_node(numbers[i]);
-		if(!node)
-		{
-			return (NULL);
-			ft_clear_list(&stack_a);
-		}
-		ft_add_back(&stack_a, node);
-		i++;
-    }
-	return (stack_a);
-}
-
-void	sort(t_stack **stack_a, t_stack **stack_b)
-{
-	int size;
-
-	size = ft_list_size(*stack_a);
-
-	if(size == 2)
-		two_sort(stack_a);
-	if(size == 3)
-		three_sort(stack_a);
-	if(size == 5 || size == 4)
-		four_five_sort(stack_a, stack_b);
-	else;
-}
-
 void	two_sort(t_stack **stack)
 {
 	if((*stack)->value > (*stack)->next->value)
@@ -54,7 +17,7 @@ void	three_sort(t_stack **stack)
 		sa(stack);
 
 }
-int min_value(t_stack *stack)
+int	min_value(t_stack *stack)
 {
 	int min;
 
@@ -69,7 +32,7 @@ int min_value(t_stack *stack)
 	}
 	return (min);
 }
-void move_node(t_stack **stack_a, int size)
+void	move_node(t_stack **stack_a, int size)
 {
 	int min;
 	int i;
@@ -106,7 +69,10 @@ void	four_five_sort(t_stack **stack_a, t_stack **stack_b)
 		pb(stack_a, stack_b);
 	}
 	three_sort(stack_a);
-	pa(stack_b, stack_a);
-	pa(stack_b, stack_a);
+    while(*stack_b)
+    {
+        pa(stack_b, stack_a);
+    }
+	//pa(stack_b, stack_a);
+	//pa(stack_b, stack_a);
 }
-

@@ -9,7 +9,7 @@
 typedef struct s_stack
 {
     int value;
-    //int index;
+    int index;
     struct s_stack *next;
 }	t_stack;
 
@@ -33,6 +33,9 @@ int        ft_list_size(t_stack *head);
 t_stack    *ft_last_node(t_stack *head);
 void    ft_clear_list(t_stack **head);
 t_stack *transfer_to_stack(int *numbers, int size);
+
+//sort
+void	sort(t_stack **stack_a, t_stack **stack_b);
 
 // Swap
 void    swap(t_stack **stack);

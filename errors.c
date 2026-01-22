@@ -1,7 +1,7 @@
 #include "push_swap.h"
 
-char    *ft_errors()
+void    ft_errors()
 {
-    write(2, "ERROR\n", 7);
-    return(NULL);
+    write(2, "Error\n", 6);
+    exit(1);
 }
