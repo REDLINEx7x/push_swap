@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   small_sort.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/23 20:04:32 by moamhouc          #+#    #+#             */
+/*   Updated: 2026/01/23 20:04:33 by moamhouc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	two_sort(t_stack **stack)
@@ -61,11 +73,10 @@ void	four_five_sort(t_stack **stack_a, t_stack **stack_b)
 	int i;
 
 	i = 0;
-	int min = min_value(*stack_a);
 	size = ft_list_size(*stack_a);
 	while(size > 3)
 	{
-		move_node(*stack_a, size);
+		move_node(stack_a, size);
 		pb(stack_a, stack_b);
 	}
 	three_sort(stack_a);

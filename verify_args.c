@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   verify_args.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/23 20:04:48 by moamhouc          #+#    #+#             */
+/*   Updated: 2026/01/23 20:04:49 by moamhouc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 char **verify_args(int ac, char *av[])
@@ -31,7 +43,6 @@ int count_size(char **args)
 int *convert_to_int(char **args, int count)
 {
     int i;
-    int j;
     int *numbers;
 
     i = 0;
@@ -45,7 +56,7 @@ int *convert_to_int(char **args, int count)
         else
         {
             free(numbers);
-            return(ft_errors());
+                ft_errors();
         }
         i++;
     }

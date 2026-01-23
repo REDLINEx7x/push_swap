@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   helpers.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/23 20:04:09 by moamhouc          #+#    #+#             */
+/*   Updated: 2026/01/23 20:04:10 by moamhouc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 char	*ft_substr(char *s, unsigned int start, size_t len)
@@ -82,7 +94,6 @@ int ft_atoi(char *s)
 
 char *ft_addspace(char *s1, char *s2)
 {
-	int i;
 	char *tmp;
 	char *result;
 	if(!s1)

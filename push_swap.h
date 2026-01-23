@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/23 20:04:27 by moamhouc          #+#    #+#             */
+/*   Updated: 2026/01/23 20:04:28 by moamhouc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 # ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -19,7 +31,7 @@ char	*ft_strdup(char *s1);
 char	*ft_substr(char *s, unsigned int start, size_t len);
 char	*ft_strjoin(char *s1, char *s2);
 int ft_atoi(char *s);
-char *ft_errors();
+void    ft_errors();
 int count_size(char **args);
 char *ft_addspace(char *s1, char *s2);
 char **verify_args(int ac, char **av);
@@ -34,8 +46,15 @@ t_stack    *ft_last_node(t_stack *head);
 void    ft_clear_list(t_stack **head);
 t_stack *transfer_to_stack(int *numbers, int size);
 
+
 //sort
 void	sort(t_stack **stack_a, t_stack **stack_b);
+void    main_sort(t_stack **stack_a, t_stack **satck_b);
+void	filling_arr(t_stack *stack_a);
+void	two_sort(t_stack **stack);
+void	three_sort(t_stack **stack);
+void	four_five_sort(t_stack **stack_a, t_stack **stack_b);
+void	indixing_stack(int *arr, t_stack *stack_a, int size);
 
 // Swap
 void    swap(t_stack **stack);

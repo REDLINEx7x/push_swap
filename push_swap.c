@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/23 20:04:22 by moamhouc          #+#    #+#             */
+/*   Updated: 2026/01/23 20:04:23 by moamhouc         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void	sort(t_stack **stack_a, t_stack **stack_b)
@@ -12,44 +24,8 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 		three_sort(stack_a);
 	if(size == 5 || size == 4)
 		four_five_sort(stack_a, stack_b);
-	else
-        main_sort(stack_a, stack_b);
-}
-void	indxing_nodes(t_stack *stack_a)
-{
-	int *arr;
-	int i;
-	int size;
-	t_stack *tmp;
-
-	i = 0;
-	size = ft_list_size(stack_a);
-	arr = malloc(size * sizeof(int));
-	tmp = stack_a;
-	while(tmp != NULL)
-	{
-		arr[i] = tmp->value;
-		tmp = tmp->next;
-		i++;
-	}
-	sorted_arr(arr, size);
-	tmp = stack_a;
-	i = 0;
-	while(tmp != NULL)
-	{
-		i = 0;
-		while (i < size)
-		{
-			if(arr[i] == tmp->value)
-			{
-				tmp->index = i;
-				break;
-			}
-			i++;
-		}
-		tmp = tmp->next;
-	}
-	free(arr);
+	//else
+	//	main_sort(stack_a, stack_b);
 }
 static void	ft_swap(int *a, int *b)
 {
@@ -59,7 +35,8 @@ static void	ft_swap(int *a, int *b)
 	*a = *b;
 	*b = room;
 }
-int *sorted_arr(int *arr, int size)
+
+void	sorted_arr(int *arr, int size)
 {
 	int i;
 	int j;
@@ -77,10 +54,55 @@ int *sorted_arr(int *arr, int size)
 		}
 		i++;
 	}
-	return (arr);
 }
-
-void main_sort(t_stack **stack_a, t_stack **satck_b)
+void	indixing_stack(int *arr, t_stack *stack_a, int size)
 {
+	t_stack *tmp;
+	int	i;
 
+	tmp = stack_a;
+	i = 0;
+	while(tmp != NULL)
+	{
+		i = 0;
+		while (i < size)
+		{
+			if(arr[i] == tmp->value)
+			{
+				tmp->index = i;
+				break;
+			}
+			i++;
+		}
+		tmp = tmp->next;
+	}
 }
+
+void	filling_arr(t_stack *stack_a)
+{
+	int *arr;
+	int i;
+	int size;
+	t_stack *tmp;
+
+	tmp = NULL;
+	i = 0;
+	size = ft_list_size(stack_a);
+	arr = malloc(size * sizeof(int));
+	if(!arr)
+		return;
+	while(tmp != NULL)
+	{
+		arr[i] = tmp->value;
+		tmp = tmp->next;
+		i++;
+	}
+	sorted_arr(arr, size);
+	indixing_stack(arr, stack_a, size);
+	free(arr);
+}
+
+//void main_sort(t_stack **stack_a, t_stack **satck_b)
+//{
+
+//}

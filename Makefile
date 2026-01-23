@@ -1,22 +1,23 @@
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 RM = rm -f
-AR = ar rcs
 
-SRC = checkers.c errors.c ft_split.c helpers.c main.c push_swap.c verify_args.c
+SRC = errors.c ft_split.c helpers.c main.c operations.c push_swap.c small_sort.c stack_.c stack_utils.c verify_args.c
 
-OBJ = (SRC:.c=.o)
+OBJ = $(SRC:.c=.o)
 
-NAME: push_swap
+NAME = push_swap
+
+all :$(NAME)
+
+$(NAME): $(OBJ)
+	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
 
 %.o:%.c
 	$(CC) $(FLAGS) -c $< -o $@
 
-all :$(NAME)
-	$(AR) $(NAME) $(OBJ)
-
 clean:
-	$(RM) (OBJS)
+	$(RM) $(OBJ)
 
 fclean:clean
 	$(RM) $(NAME)
