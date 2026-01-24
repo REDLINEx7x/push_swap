@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: redline <redline@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:04:32 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/23 20:04:33 by moamhouc         ###   ########.fr       */
+/*   Updated: 2026/01/24 22:11:57 by redline          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,7 @@ void	move_node(t_stack **stack_a, int size)
 void	four_five_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
-	int i;
-
-	i = 0;
+	
 	size = ft_list_size(*stack_a);
 	while(size > 3)
 	{
@@ -87,3 +85,4 @@ void	four_five_sort(t_stack **stack_a, t_stack **stack_b)
 	//pa(stack_b, stack_a);
 	//pa(stack_b, stack_a);
 }
+

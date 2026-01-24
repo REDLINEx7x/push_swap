@@ -8,25 +8,27 @@ int size_range(int size)
         return(15);
     }
     return(35);
+	//if (size <= 100)
+	//	return (15);
+	//return ((3 * size / 100) + 20);
 }
-
 void main_sort(t_stack **stack_a, t_stack **stack_b)
 {
     int i;
     int range;
     int size;
-
+    i = 0;
     size = ft_list_size(*stack_a);
     range = size_range(size);
     while(stack_a && i < size)
     {
         if((*stack_a)->index <= i)
         {
-            pb(stack_a, satack_b);
+            pb(stack_a, stack_b);
             rb(stack_b);
             i++;
         }
-        else if((*stack_a)->index >= i + range)
+        else if((*stack_a)->index <= i + range)
         {
             pb(stack_a, stack_b);
 			i++;
@@ -34,4 +36,52 @@ void main_sort(t_stack **stack_a, t_stack **stack_b)
         else
             ra(stack_a);
     }
+    main_sort_part2(stack_a, stack_b);
 }
+
+int max_index(t_stack *stack)
+{
+    int max;
+
+    max = stack->index;
+    while(stack)
+    {
+        if(stack->index > max)
+            max = stack->index;
+        else
+            return (max);
+        stack = stack->next;
+    }
+    return (max);
+}
+
+int max_index_spot(t_stack *stack)
+{
+	int max;
+    int spot;
+
+    spot = 0;
+    max = max_index(stack);
+    while(stack)
+    {
+        if(stack->index == max)
+        {
+            return (spot);
+        }
+        stack = stack->next;
+        spot++;
+    }
+    return (spot);
+}
+void main_sort_part2(t_stack **stack_a, t_stack **stack_b)
+//{
+//    int spot;
+//    int i;
+
+//    while (stack_b)
+//    {
+//        if()
+//    }
+
+
+//}

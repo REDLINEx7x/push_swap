@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: redline <redline@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:04:27 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/23 20:04:28 by moamhouc         ###   ########.fr       */
+/*   Updated: 2026/01/24 22:10:40 by redline          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_stack *transfer_to_stack(int *numbers, int size);
 
 //sort
 void	sort(t_stack **stack_a, t_stack **stack_b);
-void    main_sort(t_stack **stack_a, t_stack **satck_b);
+void    main_sort(t_stack **stack_a, t_stack **stack_b);
 void	filling_arr(t_stack *stack_a);
 void	two_sort(t_stack **stack);
 void	three_sort(t_stack **stack);
