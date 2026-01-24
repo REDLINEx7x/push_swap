@@ -6,7 +6,7 @@
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:04:22 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/23 20:04:23 by moamhouc         ###   ########.fr       */
+/*   Updated: 2026/01/24 15:29:16 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,3 @@ void	filling_arr(t_stack *stack_a)
 	free(arr);
 }
 
-//void main_sort(t_stack **stack_a, t_stack **satck_b)
-//{
-
-//}

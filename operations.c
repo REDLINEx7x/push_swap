@@ -6,7 +6,7 @@
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:04:19 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/23 20:04:20 by moamhouc         ###   ########.fr       */
+/*   Updated: 2026/01/24 16:04:08 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,9 +127,9 @@ void pa(t_stack **stack_a, t_stack **stack_b)
     push(stack_a, stack_b);
     write(1, "pa\n", 3);
 }
-void pb(t_stack **stack_b, t_stack **stack_a)
+void pb(t_stack **stack_a, t_stack **stack_b)
 {
-    push(stack_b, stack_a);
+    push(stack_a, stack_b);
     write(1, "pb\n", 3);
 }
 
