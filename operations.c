@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: redline <redline@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:04:19 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/24 16:04:08 by moamhouc         ###   ########.fr       */
+/*   Updated: 2026/01/25 11:54:43 by redline          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void reverse_rotate(t_stack **stack)
 void rra(t_stack **stack_a)
 {
     reverse_rotate(stack_a);
-    write(1, "rra\n", 3);
+    write(1, "rra\n", 4);
 }
 
 void rrb(t_stack **stack_b)
@@ -124,7 +124,7 @@ void    push(t_stack **stack1, t_stack **stack2)
 
 void pa(t_stack **stack_a, t_stack **stack_b)
 {
-    push(stack_a, stack_b);
+    push(stack_b, stack_a);
     write(1, "pa\n", 3);
 }
 void pb(t_stack **stack_a, t_stack **stack_b)

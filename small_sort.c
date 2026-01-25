@@ -6,7 +6,7 @@
 /*   By: redline <redline@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:04:32 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/24 22:11:57 by redline          ###   ########.fr       */
+/*   Updated: 2026/01/25 11:56:54 by redline          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,19 +70,19 @@ void	move_node(t_stack **stack_a, int size)
 void	four_five_sort(t_stack **stack_a, t_stack **stack_b)
 {
 	int	size;
-	
+
 	size = ft_list_size(*stack_a);
-	while(size > 3)
+	while(ft_list_size(*stack_a) > 3)
 	{
+		size = ft_list_size(*stack_a);
 		move_node(stack_a, size);
 		pb(stack_a, stack_b);
+		//printf("%d\n", size);
 	}
 	three_sort(stack_a);
     while(*stack_b)
     {
-        pa(stack_b, stack_a);
+        pa(stack_a, stack_b);
     }
-	//pa(stack_b, stack_a);
-	//pa(stack_b, stack_a);
 }
 

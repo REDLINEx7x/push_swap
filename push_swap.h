@@ -6,7 +6,7 @@
 /*   By: redline <redline@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:04:27 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/24 22:10:40 by redline          ###   ########.fr       */
+/*   Updated: 2026/01/25 13:14:30 by redline          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ char	*ft_substr(char *s, unsigned int start, size_t len);
 char	*ft_strjoin(char *s1, char *s2);
 int ft_atoi(char *s);
 void    ft_errors();
+void    free_args(char **args);
 int count_size(char **args);
 char *ft_addspace(char *s1, char *s2);
 char **verify_args(int ac, char **av);
@@ -50,6 +51,7 @@ t_stack *transfer_to_stack(int *numbers, int size);
 //sort
 void	sort(t_stack **stack_a, t_stack **stack_b);
 void    main_sort(t_stack **stack_a, t_stack **stack_b);
+void	main_sort_part2(t_stack **stack_a, t_stack **stack_b);
 void	filling_arr(t_stack *stack_a);
 void	two_sort(t_stack **stack);
 void	three_sort(t_stack **stack);
@@ -74,6 +76,6 @@ void    rrr(t_stack **stack_a, t_stack **stack_b);
 // Push
 void    push(t_stack **stack1, t_stack **stack2);
 void    pa(t_stack **stack_a, t_stack **stack_b);
-void    pb(t_stack **stack_b, t_stack **stack_a);
+void    pb(t_stack **stack_a, t_stack **stack_b);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: redline <redline@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:04:22 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/24 15:29:16 by moamhouc         ###   ########.fr       */
+/*   Updated: 2026/01/25 11:47:19 by redline          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ void	sort(t_stack **stack_a, t_stack **stack_b)
 
 	if(size == 2)
 		two_sort(stack_a);
-	if(size == 3)
+	else if(size == 3)
 		three_sort(stack_a);
-	if(size == 5 || size == 4)
+	else if(size == 5 || size == 4)
 		four_five_sort(stack_a, stack_b);
-	//else
-	//	main_sort(stack_a, stack_b);
+	else
+		main_sort(stack_a, stack_b);
 }
 static void	ft_swap(int *a, int *b)
 {
@@ -85,7 +85,7 @@ void	filling_arr(t_stack *stack_a)
 	int size;
 	t_stack *tmp;
 
-	tmp = NULL;
+	tmp = stack_a;
 	i = 0;
 	size = ft_list_size(stack_a);
 	arr = malloc(size * sizeof(int));

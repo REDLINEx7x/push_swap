@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   helpers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
+/*   By: redline <redline@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:04:09 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/23 20:04:10 by moamhouc         ###   ########.fr       */
+/*   Updated: 2026/01/25 13:04:41 by redline          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,13 +94,19 @@ int ft_atoi(char *s)
 
 char *ft_addspace(char *s1, char *s2)
 {
-	char *tmp;
-	char *result;
-	if(!s1)
-		return(ft_strdup(s2));
+    char    *tmp;
+    char    *result;
 
-	tmp = ft_strjoin(s1, " ");
-	result = ft_strjoin(tmp, s2);
-	free(tmp);
-	return(result);
+    if (!s2)
+        return (NULL);
+    if (!s1)
+        return (ft_strdup(s2));
+    tmp = ft_strjoin(s1, " ");
+    if (!tmp)
+        return (free(s1), NULL);
+    result = ft_strjoin(tmp, s2);
+    free(s1);
+    free(tmp);
+    return (result);
 }
+

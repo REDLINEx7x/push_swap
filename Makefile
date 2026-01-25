@@ -2,7 +2,7 @@ CC = cc
 FLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-SRC = errors.c ft_split.c helpers.c main.c operations.c push_swap.c small_sort.c stack_.c stack_utils.c verify_args.c
+SRC = errors.c ft_split.c helpers.c main.c operations.c push_swap.c small_sort.c stack_.c stack_utils.c verify_args.c butterfly_sort.c
 
 OBJ = $(SRC:.c=.o)
 

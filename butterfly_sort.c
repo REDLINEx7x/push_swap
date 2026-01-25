@@ -1,18 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   butterfly_sort.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: redline <redline@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/24 22:44:56 by redline           #+#    #+#             */
+/*   Updated: 2026/01/25 12:41:32 by redline          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 
 int size_range(int size)
 {
-    if(size <= 100)
-    {
-        return(15);
-    }
-    return(35);
-	//if (size <= 100)
-	//	return (15);
-	//return ((3 * size / 100) + 20);
+    if (size <= 10)
+        return (2);
+    if (size <= 100)
+        return (15);
+    return ((3 * size / 100) + 20);
 }
-void main_sort(t_stack **stack_a, t_stack **stack_b)
+void	main_sort(t_stack **stack_a, t_stack **stack_b)
 {
     int i;
     int range;
@@ -20,7 +29,7 @@ void main_sort(t_stack **stack_a, t_stack **stack_b)
     i = 0;
     size = ft_list_size(*stack_a);
     range = size_range(size);
-    while(stack_a && i < size)
+    while(*stack_a && i < size)
     {
         if((*stack_a)->index <= i)
         {
@@ -48,20 +57,16 @@ int max_index(t_stack *stack)
     {
         if(stack->index > max)
             max = stack->index;
-        else
-            return (max);
         stack = stack->next;
     }
     return (max);
 }
 
-int max_index_spot(t_stack *stack)
+int max_index_spot(t_stack *stack, int max)
 {
-	int max;
     int spot;
 
     spot = 0;
-    max = max_index(stack);
     while(stack)
     {
         if(stack->index == max)
@@ -74,14 +79,23 @@ int max_index_spot(t_stack *stack)
     return (spot);
 }
 void main_sort_part2(t_stack **stack_a, t_stack **stack_b)
-//{
-//    int spot;
-//    int i;
+{
+    int max;
+    int spot;
+    int size;
 
-//    while (stack_b)
-//    {
-//        if()
-//    }
-
-
-//}
+    while (*stack_b)
+    {
+        size = ft_list_size(*stack_b);
+        max = max_index(*stack_b);
+        spot = max_index_spot(*stack_b, max);
+        while((*stack_b)->index != max)
+        {
+            if(spot <= size / 2)
+                rb(stack_b);
+            else if ( spot > size / 2)
+                rrb(stack_b);
+        }
+        pa(stack_a, stack_b);
+    }
+}
