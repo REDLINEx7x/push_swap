@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   small_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: redline <redline@student.42.fr>            +#+  +:+       +#+        */
+/*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:04:32 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/25 11:56:54 by redline          ###   ########.fr       */
+/*   Updated: 2026/01/26 17:37:59 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ void	three_sort(t_stack **stack)
 		rra(stack);
 	if((*stack)->value > (*stack)->next->value)
 		sa(stack);
-
 }
 int	min_value(t_stack *stack)
 {
