@@ -6,7 +6,7 @@
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:04:27 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/26 17:46:44 by moamhouc         ###   ########.fr       */
+/*   Updated: 2026/01/27 18:52:16 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void	two_sort(t_stack **stack);
 void	three_sort(t_stack **stack);
 void	four_five_sort(t_stack **stack_a, t_stack **stack_b);
 void	indixing_stack(int *arr, t_stack *stack_a, int size);
+void free_and_exit(char **args, int *numbers, t_stack **a, t_stack **b);
 
 // Swap
 void    swap(t_stack **stack);
@@ -78,5 +79,9 @@ void    rrr(t_stack **stack_a, t_stack **stack_b);
 void    push(t_stack **stack1, t_stack **stack2);
 void    pa(t_stack **stack_a, t_stack **stack_b);
 void    pb(t_stack **stack_a, t_stack **stack_b);
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 42
+# endif
 
 #endif
