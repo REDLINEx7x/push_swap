@@ -6,41 +6,43 @@
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:04:48 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/26 12:02:37 by moamhouc         ###   ########.fr       */
+/*   Updated: 2026/01/28 21:43:58 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char **verify_args(int ac, char *av[])
+char	**verify_args(int ac, char *av[])
 {
-    char **args;
-    char *s;
-    int i;
-    s = NULL;
-    i = 1;
+	char	**args;
+	char	*s;
+	int		i;
 
-    while(i < ac)
-    {
-        if(av[i][0] == '\0')
-        {
-            free(s);
-            ft_errors();
-        }
-        s = ft_addspace(s, av[i]);
-        i++;
-    }
-    args = ft_split(s, ' ');
-    free(s);
-    return (args);
+	s = NULL;
+	i = 1;
+	while (i < ac)
+	{
+		if (av[i][0] == '\0')
+		{
+			free(s);
+			ft_errors();
+		}
+		s = ft_addspace(s, av[i]);
+		i++;
+	}
+	args = ft_split(s, ' ');
+	free(s);
+	return (args);
 }
-int count_size(char **args)
+
+int	count_size(char **args)
 {
-    int size;
-    size = 0;
-    while(args[size] != NULL)
-        size++;
-    return(size);
+	int	size;
+
+	size = 0;
+	while (args[size] != NULL)
+		size++;
+	return (size);
 }
 
 int	*convert_to_int(char **args, int count)
@@ -72,7 +74,7 @@ int	*convert_to_int(char **args, int count)
 	return (numbers);
 }
 
-//int *convert_to_int(char **args, int count)
+// int *convert_to_int(char **args, int count)
 //{
 //    int i;
 //    int *numbers;
@@ -102,41 +104,41 @@ int	*convert_to_int(char **args, int count)
 //    return(numbers);
 //}
 
-int str_checker(char *arg)
+int	str_checker(char *arg)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if((arg[0] == '-' || arg[0] == '+'))
-        i++;
-    if(arg[i] == '\0')
-        return 0;
-    while(arg[i] != '\0')
-    {
-        if(!(arg[i] >= '0' && arg[i] <= '9'))
-            return (0);
-        i++;
-    }
-    return (1);
+	i = 0;
+	if ((arg[0] == '-' || arg[0] == '+'))
+		i++;
+	if (arg[i] == '\0')
+		return (0);
+	while (arg[i] != '\0')
+	{
+		if (!(arg[i] >= '0' && arg[i] <= '9'))
+			return (0);
+		i++;
+	}
+	return (1);
 }
 
-int ft_duplicated(int *numbers, int count)
+int	ft_duplicated(int *numbers, int count)
 {
-    int j;
-    int i;
+	int	j;
+	int	i;
 
-    j = 0;
-    i = 0;
-    while(i < count - 1)
-    {
-        j = i + 1;
-        while(j < count)
-        {
-            if(numbers[i] == numbers[j])
-                return (1);
-            j++;
-        }
-        i++;
-    }
-    return(0);
+	j = 0;
+	i = 0;
+	while (i < count - 1)
+	{
+		j = i + 1;
+		while (j < count)
+		{
+			if (numbers[i] == numbers[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
 }

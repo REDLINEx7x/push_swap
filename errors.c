@@ -6,14 +6,14 @@
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:03:49 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/23 20:03:50 by moamhouc         ###   ########.fr       */
+/*   Updated: 2026/01/28 10:07:33 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    ft_errors()
+void	ft_errors(void)
 {
-    write(2, "Error\n", 6);
-    exit(1);
+	write(2, "Error\n", 6);
+	exit(1);
 }

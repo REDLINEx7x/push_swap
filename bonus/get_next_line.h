@@ -6,7 +6,7 @@
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 11:13:53 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/27 10:23:12 by moamhouc         ###   ########.fr       */
+/*   Updated: 2026/01/28 11:13:31 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <limits.h>
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 42
+#  define BUFFER_SIZE 4
 # endif
 
 char	*get_next_line(int fd);

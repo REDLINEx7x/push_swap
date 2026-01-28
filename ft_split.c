@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: redline <redline@student.42.fr>            +#+  +:+       +#+        */
+/*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:04:03 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/25 13:13:10 by redline          ###   ########.fr       */
+/*   Updated: 2026/01/28 21:37:15 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	final_str[j] = '\0';
 	return (final_str);
 }
-
 
 static int	count_words(char *s, char c)
 {

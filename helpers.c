@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   helpers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: redline <redline@student.42.fr>            +#+  +:+       +#+        */
+/*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/23 20:04:09 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/25 13:04:41 by redline          ###   ########.fr       */
+/*   Updated: 2026/01/28 21:38:01 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ char	*ft_substr(char *s, unsigned int start, size_t len)
 	sub_s[i] = '\0';
 	return (sub_s);
 }
+
 size_t	ft_strlen(char *s)
 {
 	size_t	i;
@@ -67,11 +68,12 @@ char	*ft_strdup(char *s1)
 	s2[i] = '\0';
 	return (s2);
 }
-int ft_atoi(char *s)
+
+int	ft_atoi(char *s)
 {
-	long int i;
-	long sign;
-	long res;
+	long int	i;
+	long		sign;
+	long		res;
 
 	i = 0;
 	res = 0;
@@ -92,21 +94,20 @@ int ft_atoi(char *s)
 	return (res * sign);
 }
 
-char *ft_addspace(char *s1, char *s2)
+char	*ft_addspace(char *s1, char *s2)
 {
-    char    *tmp;
-    char    *result;
+	char	*tmp;
+	char	*result;
 
-    if (!s2)
-        return (NULL);
-    if (!s1)
-        return (ft_strdup(s2));
-    tmp = ft_strjoin(s1, " ");
-    if (!tmp)
-        return (free(s1), NULL);
-    result = ft_strjoin(tmp, s2);
-    free(s1);
-    free(tmp);
-    return (result);
+	if (!s2)
+		return (NULL);
+	if (!s1)
+		return (ft_strdup(s2));
+	tmp = ft_strjoin(s1, " ");
+	if (!tmp)
+		return (free(s1), NULL);
+	result = ft_strjoin(tmp, s2);
+	free(s1);
+	free(tmp);
+	return (result);
 }
-

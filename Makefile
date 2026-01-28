@@ -1,5 +1,6 @@
 CC = cc
 FLAGS = -Wall -Wextra -Werror
+
 RM = rm -f
 
 SRC = errors.c\
