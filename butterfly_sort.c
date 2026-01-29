@@ -6,7 +6,7 @@
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/24 22:44:56 by redline           #+#    #+#             */
-/*   Updated: 2026/01/28 21:36:30 by moamhouc         ###   ########.fr       */
+/*   Updated: 2026/01/29 18:26:34 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ int	size_range(int size)
 	if (size <= 10)
 		return (2);
 	if (size <= 100)
-		return (15);
-	return ((3 * size / 100) + 20);
+		return (16);
+	return (35);
 }
 
 void	main_sort(t_stack **stack_a, t_stack **stack_b)
