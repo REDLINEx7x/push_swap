@@ -6,7 +6,7 @@
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/01 11:13:46 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/27 10:31:12 by moamhouc         ###   ########.fr       */
+/*   Updated: 2026/01/31 11:03:15 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,12 @@ char	*get_next_line(int fd)
 	static char	*line;
 	char		*result;
 
+	if (fd == -50)
+	{
+		free(line);
+		line = NULL;
+		return (NULL);
+	}
 	if (fd < 0 || BUFFER_SIZE <= 0 || BUFFER_SIZE > INT_MAX)
 		return (NULL);
 	line = fill_line(line, fd);

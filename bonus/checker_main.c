@@ -6,7 +6,7 @@
 /*   By: moamhouc <moamhouc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/28 21:33:39 by moamhouc          #+#    #+#             */
-/*   Updated: 2026/01/29 10:05:23 by moamhouc         ###   ########.fr       */
+/*   Updated: 2026/01/31 17:22:27 by moamhouc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	reading_operations(t_stack **a, t_stack **b, int fd)
 		else
 		{
 			free(move);
+			get_next_line(-50);
 			return (0);
 		}
 	}
